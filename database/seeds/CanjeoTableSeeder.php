@@ -47,7 +47,7 @@ class CanjeoTableSeeder extends Seeder
          );
 
        $canjeo->fichas()->attach($data);
-
+       $canjeo->save();
         print($canjeo);
     }
 }

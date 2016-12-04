@@ -19,4 +19,5 @@ Route::group(['prefix' => 'api'], function()
 {
 	Route::resource('home', 'AuthenticateController', ['only' => ['index']]);
 	Route::post('authenticate', 'AuthenticateController@authenticate');
+	Route::resource('registro', 'RegistroController', ['only' => ['index']]);//prueba
 });

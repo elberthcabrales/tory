@@ -22,11 +22,16 @@
 			$auth.login(credentials).then(function(data) {
 
 				// If login is successful, redirect to the users state
-				$state.go('users');
+				//$cookies.put('usuario', data.config.data.email);
+				console.log(data.config.data.email);
+				$state.go('registros');
 			}, function(error) {
 				console.log(error);
 			});
 		}
+		vm.isAuthenticated = function() {
+			  return $auth.isAuthenticated();
+			};
 
 	}
 

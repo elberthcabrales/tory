@@ -25,6 +25,10 @@
 					url: '/users',
 					templateUrl: '../views/userView.html',
 					controller: 'UserController as user'
+				}).state('registros', {
+					url: '/registros',
+					templateUrl: '../views/registroView.html',
+					controller: 'RegistroController as regc'
 				});
 		});
 })();

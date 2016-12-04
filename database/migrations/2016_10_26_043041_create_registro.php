@@ -18,9 +18,9 @@ class CreateRegistro extends Migration
             $table->timestamps();
             $table->string('concepto');
             $table->float('valor',8,2);
-
-            $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');//->onDelete('cascade')->onUpdate('cascade');
+            //el insert de eloquent buscara hacerlo en user_id y no en users_id
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');//->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('nota');
 

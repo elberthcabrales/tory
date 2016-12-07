@@ -88,6 +88,7 @@
     <script src="scripts/userController.js"></script>
     <script src="scripts/navController.js"></script>
     <script src="scripts/services.js"></script>
+    
        <script type="text/javascript">
       (function($){
         $(function(){

@@ -1,4 +1,3 @@
-
 <div class=" container">
 	<div class="col-sm-6 col-sm-offset-3">
 		<div class="well">
@@ -6,13 +5,38 @@
 				<h3>Usuarios</h3>
 
 			</div>
-			<button class="btn btn-primary" style="margin-bottom: 10px" ng-click="user.getUsers()">Get Users!</button>
-			<ul class="collection" ng-if="user.users">
-				<li class="collection-item" ng-repeat="user in user.users">
-					<h4>{{user.name}}</h4>
-					<h5>{{user.email}}</h5>
-				</li>
-			</ul>
+			<div class="row"> 
+				<a class="waves-effect waves-light btn-large" ng-click="user.getUsers()"><i class="material-icons right">visibility</i>Mostrar</a>
+				<a class="waves-effect waves-light btn-large"><i class="material-icons right">library_add</i>Crear</a>
+		
+			</div>
+
+
+			<div ng-if="user.users">
+						<ul class="collection" ng-repeat="user in user.users">
+						        <li class="collection-item">
+						         <div>
+						          {{user.email}}<br/>{{user.name}}<br/>{{user.Rol}}
+
+						        	<a href="#/editar/{{user.id}}" class="secondary-content">
+						        		<i class="material-icons">mode_edit</i>Editar
+						        	</a>
+						       </div>
+						      </li>
+
+						</ul>
+					<ul class="pagination">
+					    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+					    <li class="active"><a href="#!">1</a></li>
+					    <li class="waves-effect"><a href="#!">2</a></li>
+					    <li class="waves-effect"><a href="#!">3</a></li>
+					    <li class="waves-effect"><a href="#!">4</a></li>
+					    <li class="waves-effect"><a href="#!">5</a></li>
+					    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				  </ul>					
+			</div>
+			<button type="button" class="btn btn-primary" ng-click="user.watch('hola')">llamar servicio</button>
+
 			<div class="alert alert-danger" ng-if="user.error">
 				<strong>There was an error: </strong> {{user.error.error}}
 				<br>Please go back and login again

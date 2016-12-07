@@ -3,7 +3,7 @@
 	'use strict';
 
 	angular
-		.module('authApp', ['ui.router', 'satellizer'])
+		.module('authApp', ['ui.router', 'satellizer','ngCookies','ngRoute','MiPrimerService'])
 		.config(function($stateProvider, $urlRouterProvider, $authProvider) {
 
 

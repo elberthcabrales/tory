@@ -6,7 +6,7 @@
 		.module('authApp')
 		.controller('UserController', UserController);
 
-	function UserController($http) {
+	function UserController($http, logTest) {
 
 		var vm = this;
 
@@ -19,9 +19,13 @@
 			// on the Laravel side and will return the list of users
 			$http.get('api/home').success(function(users) {
 				vm.users = users;
+				console.log(users);
 			}).error(function(error) {
 				vm.error = error;
 			});
+		}
+		vm.watch = function(msg){
+			return logTest.square(msg);
 		}
 	}
 	

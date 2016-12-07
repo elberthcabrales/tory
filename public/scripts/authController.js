@@ -7,7 +7,7 @@
 		.controller('AuthController', AuthController);
 
 
-	function AuthController($auth, $state) {
+	function AuthController($auth, $state, $scope, $cookieStore) {
 
 		var vm = this;
 
@@ -23,7 +23,7 @@
 
 				// If login is successful, redirect to the users state
 				//$cookies.put('usuario', data.config.data.email);
-				console.log(data.config.data.email);
+				$cookieStore.put('email', data.config.data.email);
 				$state.go('registros');
 			}, function(error) {
 				console.log(error);

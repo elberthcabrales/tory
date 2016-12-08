@@ -33,7 +33,57 @@
 					    <li class="waves-effect"><a href="#!">4</a></li>
 					    <li class="waves-effect"><a href="#!">5</a></li>
 					    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-				  </ul>					
+				  </ul>	
+
+
+
+
+
+    
+        <!-- pager------------------------------------- -->
+
+      
+ 
+        <!-- items being paged -->
+        <div ng-repeat="item in user.items">
+        	
+			    <div class="card horizontal">
+			      <div class="card-stacked">
+			        <div class="card-content">
+			          <p>{{item.name}}</p>
+			        </div>
+			        <div class="card-action">
+			          <a href="#">{{item.email}}</a>
+			        </div>
+			      </div>
+			    </div>
+        	 
+        </div>
+
+        <ul ng-if="user.pager.pages.length" class="pagination">
+            <li ng-class="{disabled:user.pager.currentPage === 1}">
+                <a ng-click="user.setPage(1)">First</a>
+            </li>
+            <li ng-class="{disabled:user.pager.currentPage === 1}">
+                <a ng-click="user.setPage(user.pager.currentPage - 1)">Previous</a>
+            </li>
+            <li ng-repeat="page in user.pager.pages" ng-class="{active:user.pager.currentPage === page}">
+                <a ng-click="user.setPage(page)">{{page}}</a>
+            </li>               
+            <li ng-class="{disabled:user.pager.currentPage === user.pager.totalPages}">
+                <a ng-click="user.setPage(user.pager.currentPage + 1)">Next</a>
+            </li>
+            <li ng-class="{disabled:user.pager.currentPage === user.pager.totalPages}">
+                <a ng-click="user.setPage(user.pager.totalPages)">Last</a>
+            </li>
+        </ul>
+
+   <!-- pager------------------------------------- -->
+
+
+
+
+
 			</div>
 			<button type="button" class="btn btn-primary" ng-click="user.watch()">llamar servicio</button>
 			
@@ -45,5 +95,7 @@
 	</div>
 
 
-</div>
 
+     
+   
+ 

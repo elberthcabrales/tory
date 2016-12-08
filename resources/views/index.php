@@ -88,7 +88,7 @@
     <script src="scripts/userController.js"></script>
     <script src="scripts/navController.js"></script>
     <script src="scripts/services.js"></script>
-    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
        <script type="text/javascript">
       (function($){
         $(function(){

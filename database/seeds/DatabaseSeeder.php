@@ -15,13 +15,18 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('users')->delete();
+        //DB::table('users')->delete();
 
         $users = array(
-                ['name' => 'elberth', 'email' => 'elberthcabrales@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'Chris Sevilleja', 'email' => 'chris@scotch.io', 'password' => Hash::make('secret')],
-                ['name' => 'Holly Lloyd', 'email' => 'holly@scotch.io', 'password' => Hash::make('secret')],
-                ['name' => 'Adnan Kukic', 'email' => 'adnan@scotch.io', 'password' => Hash::make('secret')],
+                ['name' => 'elberth12', 'email' => 'elberthcabrales41@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth11', 'email' => 'elberthcabrale4s3@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth13', 'email' => 'elberthcabralesqq@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth14', 'email' => 'elberthcabralesrs@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth15', 'email' => 'elberthcabralesdd@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth16', 'email' => 'elberthcabralessf@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth17', 'email' => 'elberthcabralescs@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth161', 'email' => 'elberthcabraleasds@gmail.com', 'password' => Hash::make('cabrales')],
+
         );
             
         // Loop through each user above and create the record for them in the database

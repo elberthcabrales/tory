@@ -18,14 +18,15 @@ class DatabaseSeeder extends Seeder
         //DB::table('users')->delete();
 
         $users = array(
-                ['name' => 'elberth12', 'email' => 'elberthcabrales41@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth11', 'email' => 'elberthcabrale4s3@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth13', 'email' => 'elberthcabralesqq@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth14', 'email' => 'elberthcabralesrs@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth15', 'email' => 'elberthcabralesdd@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth16', 'email' => 'elberthcabralessf@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth17', 'email' => 'elberthcabralescs@gmail.com', 'password' => Hash::make('cabrales')],
-                ['name' => 'elberth161', 'email' => 'elberthcabraleasds@gmail.com', 'password' => Hash::make('cabrales')],
+            ['name' => 'elberth', 'email' => 'elberthcabrales@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth12x', 'email' => 'elberthcabrales41x@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth11zs', 'email' => 'elberthcabrale4s3x@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth13zs', 'email' => 'elberthcabralesqqx@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth14zs', 'email' => 'elberthcabralesrsx@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth15zs', 'email' => 'elberthcabralesddx@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth16zs', 'email' => 'elberthcabralessfx@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth17zs', 'email' => 'elberthcabralescsx@gmail.com', 'password' => Hash::make('cabrales')],
+                ['name' => 'elberth161zs', 'email' => 'elberthcabraleasdsx@gmail.com', 'password' => Hash::make('cabrales')],
 
         );
             

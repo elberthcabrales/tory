@@ -73,7 +73,7 @@
 
     <!-- Application Dependencies -->
     <!--<script src="node_modules/jquery/dist/jquery.min.js"></script>-->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
     <script src="node_modules/angular/angular.js"></script>
@@ -88,14 +88,17 @@
     <script src="scripts/userController.js"></script>
     <script src="scripts/navController.js"></script>
     <script src="scripts/services.js"></script>
+    <script src="scripts/factorys.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
        <script type="text/javascript">
       (function($){
         $(function(){
 
           $('.button-collapse').sideNav();
-
+          
         }); // end of document ready
       })(jQuery); // end of jQuery name space
+
+        
     </script>
 </html>

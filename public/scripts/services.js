@@ -15,7 +15,7 @@ var CalculatorService = angular.module('MiPrimerService', [])
         currentPage = currentPage || 1;
  
         // default page size is 10
-        pageSize = pageSize || 2;
+        pageSize = pageSize || 5;
  
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
@@ -45,7 +45,7 @@ var CalculatorService = angular.module('MiPrimerService', [])
  
         // create an array of pages to ng-repeat in the pager control
         var pages = _.range(startPage, endPage + 1);
-        console.log(pages, startPage, endPage);
+      
 		
 		
         // return object with all pager properties required by the view

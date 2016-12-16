@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\User;
+use Exception; //para usar las excepciones debo esportarlas primero (-.-)
 
 class AuthenticateController extends Controller
 {
@@ -34,7 +35,27 @@ class AuthenticateController extends Controller
 
         return $users;
     }
-
+    public function delete($id)
+    {
+        $respuesta =null;
+        try{
+            //$affectedRows = User::where('id', '>', $id)->delete();
+            $user = User::find($id);
+            $respuesta = $user;
+            $user->delete();
+            return $respuesta;
+            }
+        catch (Exception $e)
+            { 
+                return $e->getMessage();
+            }
+    }
+    public function update($data)
+    {
+         $user = User::find($id);
+         $user->name=$data->name;
+         $user->save();
+    }
     /**
      * Return a JWT
      *

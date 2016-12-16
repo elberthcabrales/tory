@@ -16,10 +16,10 @@ class RegistroTableSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('registro')->delete();
-        $user = User::first();
+       // DB::table('registro')->delete();
+        $user = User::find(1);
         $registro = new Registro;
-        $registro->concepto="prueba";
+        $registro->concepto="prueba xxxx";
         $registro->valor=100;
         $registro->nota="registro de prueba";
         $registro->Registro="Ganancia";

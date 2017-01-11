@@ -10,6 +10,15 @@ var CalculatorService = angular.module('MiPrimerService', [])
     		console.log("entra a es numero");
     		 console.log(angular.isNumber(19));
     };
+    this.esEmail = function(email)
+    {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(re.test(email))
+        {
+           return true
+        }
+        return false;
+    }
     this.GetPager = function (totalItems, currentPage, pageSize) {
         // default to first page
         currentPage = currentPage || 1;

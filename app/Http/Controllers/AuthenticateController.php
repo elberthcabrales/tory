@@ -10,9 +10,12 @@ use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\User;
 use Exception; //para usar las excepciones debo esportarlas primero (-.-)
+use Validator;
 
 class AuthenticateController extends Controller
 {
+   
+    
 
     public function __construct()
     {
@@ -50,11 +53,42 @@ class AuthenticateController extends Controller
                 return $e->getMessage();
             }
     }
-    public function update($data)
+    public function update(Request $request)
     {
-         $user = User::find($id);
+  
+
+        //$arg = $request->input('id');
+        $validator= Validator::make($request->all(),[
+                'email' => 'required|email|max:200|unique:users',
+                'name' => 'required|unique:users', 
+                ]);
+
+    
+        try{
+
+            //$affectedRows = User::where('id', '>', $id)->delete();
+            $user = User::find($request->input('id'));
+            if(!$validator->errors()->has('email')){
+                    $user->email=$request->input('email');
+            }
+            if(!$validator->errors()->has('name')){
+                    $user->name=$request->input('name');
+            }
+            /*$user->name=$request->input('name');
+            $user->email=$request->input('email');*/
+            $user->Rol=$request->input('Rol');
+            $user->save();
+            return response()
+            ->json(array('user'=>$user,'errors'=>$validator->errors())); 
+            }
+         catch (Exception $e)
+            {                 
+                return response()->json($e->getMessage());
+            }
+        
+        /* $user = User::find($id);
          $user->name=$data->name;
-         $user->save();
+         $user->save();*/
     }
     /**
      * Return a JWT
@@ -78,4 +112,20 @@ class AuthenticateController extends Controller
         // if no errors are encountered we can return a JWT
         return response()->json(compact('token'));
     }
+}
+use \Prettus\Validator\LaravelValidator;
+
+class PostValidator extends LaravelValidator {
+
+    protected $rules = [
+        ValidatorInterface::RULE_CREATE => [
+            'title' => 'required',
+            'text'  => 'min:3',
+            'author'=> 'required'
+        ],
+        ValidatorInterface::RULE_UPDATE => [
+            'title' => 'required'
+        ]
+   ];
+
 }

@@ -13,18 +13,21 @@
 		vm.users=[];
 		vm.error;
 		$scope.q = '';
+		
 		$scope.idToEdit=-1;
 		$scope.showCrear;
 		$scope.idDeleted;
-
+		$scope.Rol = ["Ecargado","Cajero"];
+		
 		$scope.PrepareToEdit = function(user){
 			$scope.idToEdit=user.id;
-			//console.log(user);
 			
+			//console.log($("#botonx").text()); si entra jquery
 		}
 		$scope.PrepareToCreate = function(){
 
 			$scope.showCrear=true;
+
 		}
 		//$scope.modelo="mi primero modelo con scope";
 
@@ -35,7 +38,7 @@
 			webServiceFactory.getUsers().success(function(users) {
 					vm.users = users;
 					vm.setPage(1);
-					console.log(users);
+					//console.log(users);
 
 				}).error(function(error) {
 					vm.error = error;
@@ -51,6 +54,31 @@
 				},
 				function(response){
 						console.log("reposnose failure :"+response )
+				});
+		}
+	
+		
+		$scope.actualizarUsuario = function(data){
+		
+		  //if(logTest.esEmail(data.email)){
+		  
+			webServiceFactory.updateUser(data).then(
+				function(response){
+					console.log(response.data.errors);
+					 
+					 angular.forEach(vm.users, function(value, key) {
+					 	 //key es el numero de iteracion
+ 					     //console.log("calve : "+key);
+ 					     //console.log("valor : "+value.id);
+ 					     if (value.id === response.data.user.id) {
+			                 value.email=response.data.user.email;
+			                 value.name=response.data.user.name;
+
+			             } 
+					 });
+				},
+				function(response){
+						console.log("Error al actualizar :"+response )
 				});
 		}
 

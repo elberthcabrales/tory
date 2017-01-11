@@ -15,8 +15,7 @@
 
             <div ng-show="showCrear">
             	 <input id="email"  type="email" class="validate" placeholder="nuevo@email.com" ng-model="email">
-		   		  <label for="email" data-error="Escribe bien el correo" data-success="right"></label>
-		          <br/>
+		     
 		         
 		          <input id="name" type="text" class="validate" placeholder="nuevo nombre" ng-model="name">
 		          <br/>
@@ -31,28 +30,36 @@
 						<ul class="collection" ng-repeat="item in user.items | filter:q" ng-hide="item.id==idDeleted">
 						        <li class="collection-item" >
 						         <div>
+						       
 						          
-						          {{item.email}}
-						   		  <input id="email"  type="email" class="validate" placeholder="nuevo@email.com" ng-model="email" ng-show="item.id==idToEdit">
-						   		  <label for="email" data-error="Escribe bien el correo" data-success="right"></label>
+						   	
+
+								{{item.email}}
+							       <input id="email" type="email" class="validate" placeholder="nuevo@email.com" ng-model="item.email" ng-show="item.id==idToEdit">
+							         
+							  
 						          <br/>
 						          {{item.name}}
-						          <input id="name" type="text" class="validate" placeholder="nuevo nombre" ng-model="name" ng-show="item.id==idToEdit">
-						          <br/>{{item.Rol}}
+						          <input id="name" type="text" class="validate" placeholder="nuevo nombre" ng-model="item.name" ng-show="item.id==idToEdit">
 
-							  	  <p ng-show="item.id==idToEdit">
-							        <input type="checkbox" id="test5" />
-							        <label for="test5">Encargado!</label>
-							      </p>
+						          <br/>	
+								  {{item.Rol}}
+							  	 
+						            <ul class="collection" ng-show="item.id==idToEdit" style="cursor:pointer;">
+								      <li class="collection-item" ng-click="item.Rol='Encargado'" ng-class={active:item.Rol==='Encargado'}>Encargado</li>
+
+								      <li class="collection-item"  ng-click="item.Rol='Cajero'" ng-class={active:item.Rol==='Cajero'}>Cajero</li>
+								    </ul>
+																	  									
+						
 								
 
 
-
-						        	<label class="secondary-content"  ng-click="PrepareToEdit(item)" ng-show="item.id!=idToEdit" style="cursor:pointer">
+						        	<label class="secondary-content"  ng-click="PrepareToEdit(item)" ng-show="item.id!=idToEdit"  style="cursor:pointer">
 						        		<i class="material-icons">mode_edit</i>Editar
 						        	</label>
 						            
-									<a class="right waves-effect waves-light btn-flat"  ng-show="item.id==idToEdit">Actualizar</a>
+									<a class="right waves-effect waves-light btn-flat"  ng-show="item.id==idToEdit" ng-click="actualizarUsuario(item)">Actualizar</a>
 								    <a class="right waves-effect waves-light btn-flat"  ng-show="item.id==idToEdit" ng-click="eliminarUsuario(item.id)">Eliminar</a>
 						       </div>
 						      </li>
@@ -109,6 +116,4 @@
         
 	</div>
 						           
-   
- 
    

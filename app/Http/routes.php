@@ -22,5 +22,8 @@ Route::group(['prefix' => 'api'], function()
 	Route::resource('registro', 'RegistroController', ['only' => ['index']]);//prueba
 	
 	Route::delete('user/delete/{id}','AuthenticateController@delete');
+
+	//update
+	Route::put('user/update/', 'AuthenticateController@update');
 });
 
